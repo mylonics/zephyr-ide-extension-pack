@@ -1,0 +1,26 @@
+{
+  "name": "zephyr-ide-extension-pack",
+  "displayName": "Zephyr IDE Extension Pack",
+  "description": "A collection of extensions to get started with the Zephyr Project",
+  "version": "0.0.1",
+  "publisher": "mylonics",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mylonics/zephyr-ide-extension-pack.git"
+  },
+  "categories": [
+    "Extension Packs"
+  ],
+  "extensionPack": [ 
+    "mylonics.zephyr-ide", 
+    "marus25.cortex-debug",
+    "ms-vscode.cpptools", 
+    "ms-vscode.vscode-serial-monitor", 
+    "nordic-semiconductor.nrf-devicetree", 
+    "nordic-semiconductor.nrf-kconfig", 
+    "twxs.cmake"
+  ]
+}
