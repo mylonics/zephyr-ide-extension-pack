@@ -2,7 +2,7 @@
   "name": "zephyr-ide-extension-pack",
   "displayName": "Zephyr IDE Extension Pack",
   "description": "A collection of extensions to get started with the Zephyr Project",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "Apache-2.0",
   "publisher": "mylonics",
   "icon": "media/logo.png",
@@ -16,13 +16,13 @@
   "categories": [
     "Extension Packs"
   ],
-  "extensionPack": [ 
-    "mylonics.zephyr-ide", 
+  "extensionPack": [
+    "mylonics.zephyr-ide",
     "marus25.cortex-debug",
-    "ms-vscode.cpptools", 
-    "ms-vscode.vscode-serial-monitor", 
-    "nordic-semiconductor.nrf-devicetree", 
-    "nordic-semiconductor.nrf-kconfig", 
+    "ms-vscode.cpptools",
+    "ms-vscode.vscode-serial-monitor",
+    "nordic-semiconductor.nrf-devicetree",
+    "nordic-semiconductor.nrf-kconfig",
     "twxs.cmake"
   ]
 }
