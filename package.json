@@ -3,7 +3,9 @@
   "displayName": "Zephyr IDE Extension Pack",
   "description": "A collection of extensions to get started with the Zephyr Project",
   "version": "0.0.1",
+  "license": "Apache-2.0",
   "publisher": "mylonics",
+  "icon": "media/logo.png",
   "engines": {
     "vscode": "^1.92.0"
   },
