@@ -21,8 +21,7 @@
     "marus25.cortex-debug",
     "ms-vscode.cpptools",
     "ms-vscode.vscode-serial-monitor",
-    "nordic-semiconductor.nrf-devicetree",
-    "nordic-semiconductor.nrf-kconfig",
-    "twxs.cmake"
+    "twxs.cmake",
+    "kylemicallefbonnici.dts-lsp"
   ]
 }
