@@ -1,0 +1,56 @@
+name: "Release Extension Pack"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+
+      - name: Extract Version
+        id: version
+        run: |
+          node -e "console.log('version=' + require('./package.json').version)" >> "$GITHUB_OUTPUT"
+
+      - name: Publish to VS Marketplace
+        uses: HaaLeo/publish-vscode-extension@v2
+        with:
+          registryUrl: https://marketplace.visualstudio.com
+          pat: ${{ secrets.VSCE_TOKEN }}
+          preRelease: false
+
+      # Switch to the Open VSX package (clangd instead of cpptools, no serial-monitor)
+      - name: Prepare Open VSX package
+        run: cp package.openvsx.json package.json
+
+      - name: Publish to Open VSX
+        continue-on-error: true
+        uses: HaaLeo/publish-vscode-extension@v2
+        with:
+          pat: ${{ secrets.OPEN_VSIX_TOKEN }}
+          preRelease: false
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: v${{ steps.version.outputs.version }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
